@@ -47,9 +47,9 @@ export default {
   methods: {
     onSubmit(evt) {
       evt.preventDefault();
-      if (this.mine.email === "" || this.mine.password === "") {
-        alert("All fields are required");
-      } else {
+     // if (this.mine.email === "" || this.mine.password === "") {
+        //alert("All fields are required");
+      //} else {
         // let link = 'http://localhost:3000/user'
         // jquery.ajax({
         //   url: link,
@@ -58,8 +58,9 @@ export default {
         //     'Access-Control-Allow-Origin': '*'
         //   }
         // })
-        AUTH.login(this.mine.email, this.mine.password);
-      }
+        //AUTH.login(this.mine.email, this.mine.password);
+      //}
+      AUTH.login(this.mine.email, this.mine.password);
     }
   }
 };

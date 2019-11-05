@@ -62,7 +62,7 @@
       />
 
       <span class="visibility" tabindex='-1' @click='togglePasswordVisibility' :arial-label='passwordVisible ? "Hide password" : "Show password"'>
-			<i class="material-icons">{{ passwordVisible ? "on" : "off" }}</i>
+			<i class="material-icons">{{ passwordVisible ? "hide" : "show" }}</i>
 		</span>
 
       <div v-if="submitted && $v.mine.password.$error" class="invalid-feedback">
@@ -179,6 +179,7 @@ export default {
       // stop here if form is invalid
       this.$v.$touch();
       if (this.$v.$invalid) {
+         AUTH.register(this.mine.email,this.mine.password)
         return;
       }
       alert("SUCCESS!! :-)\n\n" + JSON.stringify(this.mine));
